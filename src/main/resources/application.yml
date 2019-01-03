@@ -1,0 +1,48 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/sell?useUnicode=true&characterEncoding=utf-8
+  jpa:
+    show-sql: true
+    open-in-view: true
+  jackson:
+    default-property-inclusion: non-null
+#redis配置
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: redis
+    
+    
+server:
+  context-path: /springBoot
+  
+  
+#查看详细sql语句(通过日志)
+logging:
+  level:
+    cn.aone.model.mapper: trace
+#xml使用mybatis时,配置路径
+#mybatis:
+#  mapper-locations: classpath:mapper/*.xml
+ 
+#微信配置
+
+wechat:
+  mpAppId: wx86b4e29bad80522b
+  mpAppSecret: 3221e5fcf5a7fad464ed703c8213edb4
+  
+  mchId: 1510724151
+  mchKey: cdacb14d84bce2aca1a057ca3566521b
+  keyPath: /var/weixin_cert/h5.p12
+  notifyUrl: http://sell.natapp4.cc/sell/pay/notify
+  templateId:
+    orderStatus: e-Cqq67QxD6YNI41iRiqawEYdFavW_7pc7LyEMb-yeQ
+  
+#绝对路径配置    
+projecturl:
+  wechatMpAuthorize: http://10.0.1.183
+  wechatOpenAuthorize: http://10.0.1.183
+  springBoot: http://10.0.1.183  
